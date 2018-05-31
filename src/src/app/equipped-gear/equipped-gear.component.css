@@ -1,0 +1,12 @@
+.container {
+  display:flex;
+  margin: 20px;
+}
+
+.title {
+  width:50px;
+  font-size: 0.8em;
+  font-weight: bold;
+  padding:10px;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,13 @@
+<mat-card class="wrapper">
+
+	<gear-detail [gear]='selectedItem'></gear-detail>
+</mat-card>
+
+<mat-card class="wrapper">
+
+	<div *ngFor="let item of gear">
+
+		<gear-button [gear]='item' class='gearbutton' [selected]='selectedItem && item.id == selectedItem.id' (clicked)='select($event)'></gear-button>
+	</div>
+
+</mat-card>

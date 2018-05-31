@@ -1,0 +1,12 @@
+<mat-card class="wrapper">
+	<div>
+		<input type="button" (click)='selectAll(true)' value='Select All' />
+		<input type="button" (click)='selectAll(false)' value='Select None' />
+	</div>
+</mat-card>
+<mat-card class="wrapper">
+	<div *ngFor="let item of gear">
+
+		<gear-button [gear]='item' class='gearbutton' [selected]='item.owned == true' (clicked)='select($event)'></gear-button>
+	</div>
+</mat-card>

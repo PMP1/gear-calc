@@ -1,0 +1,5 @@
+
+<div class='gearbutton mat-elevation-z2' [ngClass]="{'selected':selected, 'related': related}" (click)='onClick()' [matBadge]="badge" matBadgeOverlap="true" [matBadgeHidden]="!badge"
+>
+  {{gear.name}} <span *ngIf="gear.level && gear.level > 0">+{{gear.level}}</span>
+</div>

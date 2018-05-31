@@ -1,0 +1,75 @@
+<div style="display:flex">
+	<div style="width:50%">
+		<mat-card class="wrapper">
+			<div class='title'>Equipped Gear</div>
+			<div class='container' *ngIf='collectionGear'>
+				<gear-button *ngFor="let item of equippedGear" [gear]='item' class='gearbutton' [selected]='item.equipped == true' [related]='item.related == true'
+				 [badge]="item.badge" (mouseenter)='showRelated(item, true)' (mouseleave)='showRelated(item, false)'></gear-button>
+			</div>
+		</mat-card>
+		<br/>
+    <mat-card class="wrapper">
+		<div class='title'>Required for Equipped Gear</div>
+		<div class='container' *ngIf='collectionGear'>
+
+			<gear-button *ngFor="let item of collectionGear | filter: {required: true}" [gear]='item' class='gearbutton' [selected]='item.collection == true'
+			 [related]='item.related == true' [badge]="item.badge" (click)="select(item)" (mouseenter)='showRelated(item, true)' (mouseleave)='showRelated(item, false)'></gear-button>
+		</div>
+    </mat-card>
+		<br/>
+    <mat-card class="wrapper">
+		<div class='title'>Remaining</div>
+		<div class='container' *ngIf='collectionGear'>
+			<!--div class='title'>Required for Equipped</div-->
+			<gear-button *ngFor="let item of collectionGear | filter: {required: false}" [gear]='item' class='gearbutton' [selected]='item.collection == true'
+			 [related]='item.related == true' [badge]="item.badge" (click)="select(item)" (mouseenter)='showRelated(item, true)' (mouseleave)='showRelated(item, false)'></gear-button>
+		</div>
+    </mat-card>
+	</div>
+	<div style="width:50%">
+
+    <mat-card class="wrapper">
+		<div class='title'>Priority</div>
+		<mat-radio-group [(ngModel)]="priority" (change)='priorityChange()'>
+			<mat-radio-button value="1">A>D>M>H</mat-radio-button><br/>
+			<mat-radio-button value="2">A>D>H>M</mat-radio-button><br/>
+			<mat-radio-button value="3">M>A>D>H</mat-radio-button><br/>
+			<mat-radio-button value="4">M>D>A>H</mat-radio-button><br/>
+		</mat-radio-group>
+    </mat-card>
+
+    <mat-card class="wrapper">
+		<!--collection-slots [collection]="collectionGear" [equipped]="equippedGear"></collection-slots-->
+		<div class='title'>Stats</div>
+    <span [ngStyle]="{'color':totalCollection > 20 ? 'red': 'black' }">{{totalCollection}} / 20 slots filled</span><br/>
+
+		A {{totalAtttack}}<br/> D {{totalDefence}}<br/> H {{totalHealth}}<br/> M {{totalMagic}}<br/>
+    </mat-card>
+		<div class='title'>Attack</div>
+		<div class='container' *ngIf='collectionGear'>
+			<!--div class='title'>Required for Equipped</div-->
+			<gear-button *ngFor="let item of collectionGear | filter: {slot: 'attack'}" [gear]='item' class='gearbutton' [selected]='item.collection == true'
+			 [related]='item.related == true' [badge]="item.badge" (click)="select(item)" (mouseenter)='showRelated(item, true)' (mouseleave)='showRelated(item, false)'></gear-button>
+		</div>
+
+		<div class='title'>Defence</div>
+		<div class='container' *ngIf='collectionGear'>
+			<!--div class='title'>Required for Equipped</div-->
+			<gear-button *ngFor="let item of collectionGear | filter: {slot: 'defence'}" [gear]='item' class='gearbutton' [selected]='item.collection == true'
+			 [related]='item.related == true' [badge]="item.badge" (click)="select(item)" (mouseenter)='showRelated(item, true)' (mouseleave)='showRelated(item, false)'></gear-button>
+		</div>
+		<div class='title'>Health</div>
+		<div class='container' *ngIf='collectionGear'>
+			<!--div class='title'>Required for Equipped</div-->
+			<gear-button *ngFor="let item of collectionGear | filter: {slot: 'health'}" [gear]='item' class='gearbutton' [selected]='item.collection == true'
+			 [related]='item.related == true' [badge]="item.badge" (click)="select(item)" (mouseenter)='showRelated(item, true)' (mouseleave)='showRelated(item, false)'></gear-button>
+		</div>
+		<div class='title'>Magic</div>
+		<div class='container' *ngIf='collectionGear'>
+			<!--div class='title'>Required for Equipped</div-->
+			<gear-button *ngFor="let item of collectionGear | filter: {slot: 'magic'}" [gear]='item' class='gearbutton' [selected]='item.collection == true'
+			 [related]='item.related == true' [badge]="item.badge" (click)="select(item)" (mouseenter)='showRelated(item, true)' (mouseleave)='showRelated(item, false)'></gear-button>
+		</div>
+
+	</div>
+</div>

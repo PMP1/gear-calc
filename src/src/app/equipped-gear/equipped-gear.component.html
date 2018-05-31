@@ -1,0 +1,35 @@
+
+<mat-card  class='container'>
+  <div class='title'>Helmet</div>
+  <gear-button *ngFor="let item of ownedGear | filter: {type: 'helmet'}" [gear]='item' class='gearbutton' [selected]='item.equipped == true' (clicked)='select($event)'></gear-button>
+</mat-card>
+
+<mat-card  class='container'>
+  <div class='title'>Armor</div>
+  <gear-button *ngFor="let item of ownedGear | filter: {type: 'armor'}" [gear]='item' class='gearbutton' [selected]='item.equipped == true' (clicked)='select($event)'></gear-button>
+</mat-card>
+
+<mat-card  class='container'>
+  <div class='title'>Gloves</div>
+  <gear-button *ngFor="let item of ownedGear | filter: {type: 'gloves'}" [gear]='item' class='gearbutton' [selected]='item.equipped == true' (clicked)='select($event)'></gear-button>
+</mat-card>
+
+<mat-card  class='container'>
+  <div class='title'>Boots</div>
+  <gear-button *ngFor="let item of ownedGear | filter: {type: 'boots'}" [gear]='item' class='gearbutton' [selected]='item.equipped == true' (clicked)='select($event)'></gear-button>
+</mat-card>
+
+<mat-card  class='container'>
+  <div class='title'>Pendant</div>
+  <gear-button *ngFor="let item of ownedGear | filter: {type: 'pendant'}" [gear]='item' class='gearbutton' [selected]='item.equipped == true' (clicked)='select($event)'></gear-button>
+</mat-card>
+
+<mat-card  class='container'>
+  <div class='title'>Ring</div>
+  <gear-button *ngFor="let item of ownedGear | filter: {type: 'ring'}" [gear]='item' class='gearbutton' [selected]='item.equipped == true' (clicked)='select($event)'></gear-button>
+</mat-card>
+
+<mat-card  class='container'>
+  <div class='title'>Talisman</div>
+  <gear-button *ngFor="let item of ownedGear | filter: {type: 'talisman'}" [gear]='item' class='gearbutton' [selected]='item.equipped == true' (clicked)='select($event)'></gear-button>
+</mat-card>

@@ -1,0 +1,22 @@
+<mat-card class="wrapper">
+	<div>
+		<input type=" number " [(ngModel)]="level " (input)="onLevelChange() " />
+
+	</div>
+</mat-card>
+<mat-card class="wrapper">
+	<div *ngFor="let item of ownedGear">
+
+		<gear-button [gear]='item' class='gearbutton' [selected]='selectedItem && item.id == selectedItem.id' (clicked)='select($event)'></gear-button>
+	</div>
+
+</mat-card>
+<mat-card class="wrapper">
+	<pre>
+Collection  
+- assume all slots @ 10%
+- 
+
+
+</pre>
+</mat-card>

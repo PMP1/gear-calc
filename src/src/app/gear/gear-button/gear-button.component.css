@@ -1,0 +1,22 @@
+.gearbutton {
+
+  width:40px;
+  height:40px;
+  border:1px solid #aaa;
+
+  font-size: 0.55em;
+  cursor: pointer;
+  margin: 5px;
+  padding:3px;
+  word-break: normal;
+  text-overflow: ellipsis;
+  border-radius: 4px;
+}
+
+.gearbutton.selected {
+  border: 1px solid red;
+}
+
+.gearbutton.related {
+  background-color: yellow;
+}

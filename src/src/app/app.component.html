@@ -1,0 +1,27 @@
+<hello name="{{ name }}"></hello>
+
+<mat-tab-group>
+	<mat-tab label="Gear Index">
+		<index [gear]='gear'></index>
+	</mat-tab>
+
+	<mat-tab label="Owned Gear">
+    1) Select everything you own
+    <owned-gear [gear]='gear' (ownedChanged)="ownedChanged($event)" ></owned-gear>
+	</mat-tab>
+
+	<mat-tab label="Configure Gear">
+      2) Configure your gear levels
+      <configure-gear [ownedGear]='ownedGear' (ownedGearChanged)="ownedChanged($event)"></configure-gear>
+	</mat-tab>
+
+	<mat-tab label="Equiped Gear">
+    3) Specify Equipped Gear
+    <equipped-gear [ownedGear]='ownedGear'  (equippedChanged)="equippedChanged($event)" ></equipped-gear>
+	</mat-tab>
+
+	<mat-tab label="Collections">
+    4) Configure collections. Tip: selecting all remaining items will show highest possible gear you own, but you'll have to manually remove them down to 20 items. Slot items are shown hightest value first, make sure highest valued items go into the highest % slots
+    <collection [ownedGear]='ownedGear' [equippedGear]="equippedGear"></collection>
+	</mat-tab>
+</mat-tab-group>
